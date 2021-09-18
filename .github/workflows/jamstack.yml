@@ -1,17 +1,20 @@
-name: Build and Deploy
-on: [push]
+name: Publish static site to GitHub Pages
+on:
+  push:
+    branches:
+      - main
 jobs:
-  build-and-deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v1
 
       - name: Setup Python 3 🐍
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
-          architecture: 'x64'
+          python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
 
       - name: Update PIP ✨
         run: |
@@ -25,8 +28,12 @@ jobs:
       - name: Run script 🏃
         run: python static.py
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+      - name: Publish content to GitHub Pages 🚀
+        uses: andre487/publish-to-orphan-gh-pages@v1.0.1
         with:
+          src_dir: ./deploy_dir
+          dest_dir: .
           branch: deploy
-          folder: deploy_dir
+          deploy_private_key: ${{ secrets.REPO_DEPLOY_PRIVATE_KEY }}
+          important_files: '["CNAME"]'
+          debug: false
