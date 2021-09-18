@@ -1,6 +1,6 @@
 {
 	"head":{
-		"description": "Basic jamstack site",
+		"description": "Static sites with the power of Flask",
 		"keywords": "python, jamstack",
 		"author": "R Ja",
 		"theme-color": "#ffb74d"
