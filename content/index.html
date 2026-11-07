@@ -383,6 +383,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        URLs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dates" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -598,6 +609,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Versioning
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../contributing/" class="md-nav__link">
         
   
@@ -685,6 +722,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Recognised keys
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        URLs
       </span>
     </span>
   </a>
@@ -875,10 +923,30 @@ The body starts here.
 <td>none</td>
 <td>Short description used by the blog theme and the feed.</td>
 </tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>Derived from the file</td>
+<td>Public URL, starting with <code>/</code> and ending in <code>/</code> or <code>.html</code>.</td>
+</tr>
 </tbody>
 </table>
 <p>Any other key is kept in <code>page.meta</code> and is available to templates, so a theme
 can support <code>cover</code>, <code>tags</code>, or anything else without engine changes.</p>
+<h3 id="urls">URLs<a class="headerlink" href="#urls" title="Permanent link">&para;</a></h3>
+<p>By default the URL comes from the file path: <code>about.md</code> becomes <code>/about/</code> and
+<code>posts/hello.md</code> becomes <code>/posts/hello/</code>. Use <code>url</code> in the front matter to
+publish a page somewhere else:</p>
+<div class="highlight"><pre><span></span><code><span class="err">+++</span>
+<span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Changelog"</span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/changelog/"</span>
+<span class="err">+++</span>
+</code></pre></div>
+<p>The value must start with <code>/</code> and end in <code>/</code> or <code>.html</code>; anything else fails
+the build instead of being silently ignored.</p>
+<p>File names are used as written, including non-ASCII characters: <code>año-nuevo.md</code>
+is published at <code>/año-nuevo/</code>. Keep that in mind when choosing names, because
+changing one changes the URL.</p>
 <h3 id="dates">Dates<a class="headerlink" href="#dates" title="Permanent link">&para;</a></h3>
 <p><code>date</code> accepts a TOML date (<code>2026-11-07</code>), a TOML datetime, or an ISO string.
 Only the calendar date is used; times are discarded. An invalid value fails
