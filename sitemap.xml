@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://jamstackpy.github.io/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/cli/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/configuration/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/content/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/contributing/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/deployment/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/migration/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/themes/</loc>
+      </url>
+      <url>
+        <loc>https://jamstackpy.github.io/tutorial/</loc>
+      </url>
+</urlset>
