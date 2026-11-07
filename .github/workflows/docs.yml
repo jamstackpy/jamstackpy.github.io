@@ -16,20 +16,20 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out this repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Check out the documentation sources
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: jamstackpy/jamstack
           ref: "2.0"
           path: src
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
 
@@ -42,7 +42,7 @@ jobs:
           touch site/.nojekyll
 
       - name: Publish to the deploy branch
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.9.0
         with:
           branch: deploy
           folder: src/site
