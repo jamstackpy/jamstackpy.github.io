@@ -1,0 +1,46 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docs
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the documentation sources
+        uses: actions/checkout@v4
+        with:
+          repository: jamstackpy/jamstack
+          ref: 2.0
+          path: src
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Build the site
+        working-directory: src
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install zensical==0.1.0
+          zensical build --strict
+          touch site/.nojekyll
+
+      - name: Publish to the deploy branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: deploy
+          folder: src/site
+          clean: true
