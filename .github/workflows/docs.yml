@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: jamstackpy/jamstack
-          ref: "2.0"
+          ref: stable
           path: src
 
       - name: Set up Python
