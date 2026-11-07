@@ -720,7 +720,7 @@ with the official Pages actions. In the site repository, create
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">"3.13"</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install "jamstack @ git+https://github.com/jamstackpy/jamstack@2.0"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install jamstack</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jamstack build --clean</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/configure-pages@v5</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/upload-pages-artifact@v3</span>
@@ -746,7 +746,7 @@ links resolve correctly.</p>
 <tbody>
 <tr>
 <td>Build command</td>
-<td><code>pip install "jamstack @ git+https://github.com/jamstackpy/jamstack@2.0" &amp;&amp; jamstack build --clean</code></td>
+<td><code>pip install jamstack &amp;&amp; jamstack build --clean</code></td>
 </tr>
 <tr>
 <td>Publish directory</td>
@@ -772,7 +772,7 @@ site.</p>
 </tr>
 <tr>
 <td>Build command</td>
-<td><code>pip install "jamstack @ git+https://github.com/jamstackpy/jamstack@2.0" &amp;&amp; jamstack build --clean</code></td>
+<td><code>pip install jamstack &amp;&amp; jamstack build --clean</code></td>
 </tr>
 <tr>
 <td>Build output directory</td>
