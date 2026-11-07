@@ -18,6 +18,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out this repository
+        uses: actions/checkout@v4
+
       - name: Check out the documentation sources
         uses: actions/checkout@v4
         with:
