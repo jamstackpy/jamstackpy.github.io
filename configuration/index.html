@@ -425,6 +425,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[extra]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#behaviour-worth-knowing" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -690,6 +701,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[extra]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#behaviour-worth-knowing" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -832,6 +854,18 @@ from pages you deleted.</p>
 <p>The name must match <code>^[a-z0-9][a-z0-9_-]*$</code>. Jamstack resolves it from
 <code>&lt;project&gt;/themes/&lt;name&gt;/</code> first and falls back to the themes bundled with the
 package. See <a href="../themes/">Themes</a>.</p>
+<h2 id="extra"><code>[extra]</code><a class="headerlink" href="#extra" title="Permanent link">&para;</a></h2>
+<p>Free-form table for values your theme needs. Jamstack does not interpret it:
+templates read it as <code>site.extra</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[extra]</span>
+<span class="n">footer_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Built with jamstack"</span>
+
+<span class="k">[extra.social]</span>
+<span class="n">github</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/jamstackpy"</span>
+</code></pre></div>
+<p>It must be a table; any other type stops the build with an error. Themes render
+with <code>StrictUndefined</code>, so read optional keys with <code>site.extra.get("...")</code>
+instead of <code>site.extra.key</code>.</p>
 <h2 id="behaviour-worth-knowing">Behaviour worth knowing<a class="headerlink" href="#behaviour-worth-knowing" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Unknown keys are ignored, so a future version can add options without
